@@ -7,7 +7,7 @@ if [ ! -d "${VENV}" ]; then
 fi
 . ${VENV}/bin/activate
 if [ "$NIGHTLY" -eq "0" ]; then
-    pip install --upgrade torch torchvision torchaudio
+    pip install --no-cache-dir torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0  --index-url https://download.pytorch.org/whl/cu124
 else
     pip install --upgrade --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu118
 fi
